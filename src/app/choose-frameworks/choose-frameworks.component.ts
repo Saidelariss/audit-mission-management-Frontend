@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FrameworkServiceService } from '../framework-service.service';
 import * as XLSX from 'xlsx';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -31,7 +33,8 @@ export class ChooseFrameworksComponent implements OnInit {
     );
   }
   constructor(private frameworkService : FrameworkServiceService,
-              private http: HttpClient ){}
+              private http: HttpClient,
+              private router:Router ){}
   standards = [
     { label: 'Standard 1', checked: false },
     { label: 'Standard 2', checked: false },
@@ -52,6 +55,11 @@ export class ChooseFrameworksComponent implements OnInit {
       this.selectedFrameworks.splice(index, 1);
     }
   }
+
+  navigateToOtherPage() {
+    this.router.navigateByUrl("/createUser");; // Remplacez '/chemin-de-la-page' par le chemin réel de votre page
+}
+
 
   // your-component.component.ts
 // your-component.component.ts

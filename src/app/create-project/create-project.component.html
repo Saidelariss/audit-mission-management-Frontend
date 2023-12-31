@@ -1,0 +1,108 @@
+
+
+<header class="header">
+    <div class="header__intro">
+      <div class="header__logo">
+        <a href="/">
+          <img alt="Company logo" src="https://aisse.com/fr/uploads/files/Images/Infocus/233826a67be66a810b23a263230da62e_XL.jpg">
+        </a>
+      </div>
+     
+    </div>
+    <div class="header__settings">
+      
+      
+      
+      <a aria-expanded="false" class="header__dropdown dropdown-toggler" data-bs-toggle="dropdown" href="#" id="header_dropdown" role="button">
+        <div class="flex-center">
+          <div class="header__user">
+            <img alt="logo" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" onerror="this.src='/img/placeholder-profileIcon.svg';">
+          </div>
+          <span class="header__settings-icon">
+            <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+          </span>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item">Manage Accounts</a>
+          
+        </li>
+        <li>
+          <a class="dropdown-item" href="/web/user/view/profile">Settings</a>
+        </li>
+        
+        
+        <li>
+          <a class="dropdown-item" href="/perform_logout">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+    
+     <section class="layout__page">
+      <aside class="sidebar">
+  <div class="sidebar__inner">
+  <nav class="sidebar__nav">
+    <ul>
+      
+     
+      <!-- <li (click)="navigateToOtherPage()">
+        <a id="nav_dashboard" >
+          <i class="fa-light fa-table-columns sidebar__icon" aria-hidden="true"></i>
+          <span  class="sidebar__link">Framework</span>
+        </a>
+      </li> -->
+
+      <li>
+        <a id="nav_control-scope" class="active">
+          <i class="fa-light fa-sliders sidebar__icon" aria-hidden="true"></i>
+          <span class="sidebar__link" >Create Project</span>
+          <span class="sidebar__icon sidebar__icon--lock sidebar__icon--small">
+            
+            <i class="fa-solid fa-lock-keyhole-open" aria-hidden="true"></i>
+          </span>
+        </a>
+      </li>
+     
+      
+    </ul>
+  </nav>
+  <footer class="sidebar__footer">
+    <div class="sidebar__legal">
+      <div class="sidebar__legal-content">
+        <a id="privacy_policy" href="https://www.iubenda.com/privacy-policy/10363555" target="_blank" title="Privacy Policy ">Privacy Policy</a>
+        <span>|</span>
+        <a id="terms_and_conditions" href="https://www.iubenda.com/terms-and-conditions/10363555" target="_blank" title="Terms and Conditions ">Terms and Conditions</a>
+      </div>
+     
+    </div>
+  </footer>
+  </div>
+  </aside>
+
+ <!-- project-create.component.html -->
+<form (ngSubmit)="createProject()">
+    <label for="projectName">Nom du projet:</label>
+    <input type="text" id="projectName" required>
+  
+    <label for="projectDescription">Description du projet:</label>
+    <textarea id="projectDescription"  required></textarea>
+  
+    <label for="client">Client:</label>
+    <input class="client" type="text">
+  
+    <label for="auditors">Auditeurs:</label>
+    <select multiple id="auditors" [(ngModel)]="selectedAuditors" required>
+      <option *ngFor="let auditor of auditors" [value]="auditor.id">{{ auditor.name }}</option>
+    </select>
+  
+    <button type="submit">Créer le projet</button>
+  </form>
+  
+
+  </section>
+  
+
